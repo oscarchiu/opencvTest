@@ -1,8 +1,8 @@
 //
-//  ViewController.h
+//  ImageViewController.h
 //  opencvTest
 //
-//  Created by opcom on 2015/4/10.
+//  Created by opcom on 2015/4/15.
 //  Copyright (c) 2015年 opcom. All rights reserved.
 //
 
@@ -35,18 +35,9 @@ static UIImage* MattoUIImage(const cv::Mat& m);
 
 static void UIImagetoMat(const UIImage* image, cv::Mat& m);
 
-
-@interface ViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, CvVideoCameraDelegate>
-{
-    CvVideoCamera* videoCamera;
-}
-
+@interface ImageViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
--(void)operateWithOpenCV:(UIImage*)image;
-
-@property (nonatomic, retain) CvVideoCamera* videoCamera;
+@property (strong, nonatomic) IBOutlet UIButton *loadBtn;
+- (IBAction)loadBtnPressed:(id)sender;
 
 @end
-
-
-

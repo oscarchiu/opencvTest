@@ -1,30 +1,22 @@
 //
-//  ViewController.m
+//  ImageViewController.m
 //  opencvTest
 //
-//  Created by opcom on 2015/4/10.
+//  Created by opcom on 2015/4/15.
 //  Copyright (c) 2015年 opcom. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "ImageViewController.h"
 
-@interface ViewController ()
+@interface ImageViewController ()
 
 @end
 
-@implementation ViewController
+@implementation ImageViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
-    self.videoCamera = [[CvVideoCamera alloc] initWithParentView:_imageView];
-    self.videoCamera.delegate = self;
-    self.videoCamera.defaultAVCaptureDevicePosition = AVCaptureDevicePositionFront;
-    self.videoCamera.defaultAVCaptureSessionPreset = AVCaptureSessionPreset352x288;
-    self.videoCamera.defaultAVCaptureVideoOrientation = AVCaptureVideoOrientationPortrait;
-    self.videoCamera.defaultFPS = 30;
-//    self.videoCamera.grayscale = NO;
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,12 +24,15 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.videoCamera start];
-    });
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
 }
+*/
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
@@ -126,26 +121,17 @@ static void UIImagetoMat(const UIImage* image, cv::Mat& m)
     
 }
 
-#pragma mark - Protocol CvVideoCameraDelegate
+- (IBAction)loadBtnPressed:(id)sender {
+    UIImagePickerController* picker = [[UIImagePickerController alloc] init];
 
-#ifdef __cplusplus
-- (void)processImage:(Mat&)image;
-{
-//    // Do some OpenCV stuff with the image
-//    Mat image_copy;
-//    cvtColor(image, image_copy, CV_BGRA2BGR);
-//    
-//    // invert image
-//    bitwise_not(image_copy, image_copy);
-//    cvtColor(image_copy, image, CV_BGR2BGRA);
-    
-    cv::Mat gray;
-    cv::cvtColor(image, gray, CV_BGRA2GRAY);
-    cv::GaussianBlur(gray, gray, cv::Size(5,5), 1.2,1.2);
-    cv::Canny(gray, gray, 0, 50);
-    
-    image = cv::Scalar::all(255);
-    image.setTo(cv::Scalar(128, 255, 0, 255), gray);
+    picker.delegate = self;
+
+    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary])
+
+        return;
+
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+
+    [self presentViewController:picker animated:YES completion:nil];
 }
-#endif
 @end

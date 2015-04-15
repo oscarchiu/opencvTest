@@ -14,6 +14,7 @@
 		2027BB361AD77CC800B509AA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2027BB351AD77CC800B509AA /* Images.xcassets */; };
 		2027BB391AD77CC800B509AA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2027BB371AD77CC800B509AA /* LaunchScreen.xib */; };
 		2027BB451AD77CC800B509AA /* opencvTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2027BB441AD77CC800B509AA /* opencvTestTests.m */; };
+		20C53F0E1ADE46570073C3C1 /* ImageViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 20C53F0D1ADE46570073C3C1 /* ImageViewController.mm */; };
 		20EA99261AD7824D00F225C6 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20EA99251AD7824D00F225C6 /* opencv2.framework */; };
 		20EA99281AD7AA4A00F225C6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20EA99271AD7AA4A00F225C6 /* AVFoundation.framework */; };
 		20EA992A1AD7AA7300F225C6 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20EA99291AD7AA7300F225C6 /* CoreMedia.framework */; };
@@ -44,6 +45,8 @@
 		2027BB3E1AD77CC800B509AA /* opencvTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = opencvTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2027BB431AD77CC800B509AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2027BB441AD77CC800B509AA /* opencvTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = opencvTestTests.m; sourceTree = "<group>"; };
+		20C53F0C1ADE46570073C3C1 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
+		20C53F0D1ADE46570073C3C1 /* ImageViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ImageViewController.mm; sourceTree = "<group>"; };
 		20EA99251AD7824D00F225C6 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 		20EA99271AD7AA4A00F225C6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		20EA99291AD7AA7300F225C6 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
@@ -101,6 +104,8 @@
 				2027BB2D1AD77CC800B509AA /* AppDelegate.m */,
 				2027BB2F1AD77CC800B509AA /* ViewController.h */,
 				2027BB301AD77CC800B509AA /* ViewController.mm */,
+				20C53F0C1ADE46570073C3C1 /* ImageViewController.h */,
+				20C53F0D1ADE46570073C3C1 /* ImageViewController.mm */,
 				2027BB321AD77CC800B509AA /* Main.storyboard */,
 				2027BB351AD77CC800B509AA /* Images.xcassets */,
 				2027BB371AD77CC800B509AA /* LaunchScreen.xib */,
@@ -237,6 +242,7 @@
 			files = (
 				2027BB311AD77CC800B509AA /* ViewController.mm in Sources */,
 				2027BB2E1AD77CC800B509AA /* AppDelegate.m in Sources */,
+				20C53F0E1ADE46570073C3C1 /* ImageViewController.mm in Sources */,
 				2027BB2B1AD77CC800B509AA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
